@@ -28,13 +28,13 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build with Gradle
-        run: ./gradlew assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon
 
       - name: Run lint
-        run: ./gradlew lintDebug --no-daemon
+        run: gradle lintDebug --no-daemon
 
       - name: Run unit tests
-        run: ./gradlew testDebugUnitTest --no-daemon
+        run: gradle testDebugUnitTest --no-daemon
 
       - name: Upload build outputs (APK)
         uses: actions/upload-artifact@v4
